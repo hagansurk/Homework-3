@@ -20,7 +20,7 @@ import re
 
 ## Write code to define your parse_counted_words function here.
 def parse_counted_words(k):
-    word = re.findall(r'(\d+)\k(\W[A-ZA-z]+|[A-Za-z]+)', k)
+    word = re.findall(r'(\d+)\s(\W[A-Za-z]+|[A-Za-z]+)', k)
     if len(word)==0:
         return None
     else:
@@ -32,7 +32,7 @@ file = open('computer_paths.txt')
 info = file.read()
 ## (a) Write Python code to determine how many of these paths identify FILES, not directories. Save that number in the variable file_paths_num.
 files = re.findall(r'.+\..+', info)
-files_path_num = len(files)
+file_paths_num = len(files)
 ## (b) Write Python code to determine how many of these paths are FULL paths, not relative paths. Save that number in the variable full_paths_num.
 file1 = re.findall(r'(\/Users|~).+', info)
 full_paths_num = len(file1)
@@ -40,7 +40,8 @@ full_paths_num = len(file1)
 file2 = re.findall(r'.*SI206.+\.py', info)
 python_course_paths = len(file2)
 ## (d) Write Python code to determine how many of these paths describe a Microsoft file (a file that EITHER ends with .docx OR .xlsx, but nothing else counts) where the file name ends in a digit. Save that total in the variable microsoft_files_num.
-
+file3 = re.findall(r'.+\..+\.docx|.xlsx', info)
+microsoft_files_num = len(file3)
 
 
 
