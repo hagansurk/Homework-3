@@ -2,8 +2,8 @@ import unittest
 import re
 
 ## SI 206 - W17 - HW3
-## COMMENT WITH:
-## Your section day/time:
+## COMMENT WITH: 
+## Your section day/time: Thurdsday's at 6pm
 ## Any names of people you worked with on this assignment:
 
 #####################
@@ -37,7 +37,8 @@ files_path_num = len(files)
 file1 = re.findall(r'(\/Users|~).+', info)
 full_paths_num = len(file1)
 ## (c) Write Python code to determine how many of these paths describe a Python file saved inside a folder called SI206. Save that number in the variable python_course_paths.
-
+file2 = re.findall(r'.*SI206.+\.py', info)
+python_course_paths = len(file2)
 ## (d) Write Python code to determine how many of these paths describe a Microsoft file (a file that EITHER ends with .docx OR .xlsx, but nothing else counts) where the file name ends in a digit. Save that total in the variable microsoft_files_num.
 
 
